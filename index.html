@@ -1,0 +1,802 @@
+<!doctype html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <title>Tailwind CLI Example</title>
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link rel="stylesheet" href="src/output.css">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+   </head>
+
+
+
+   <body class="bg-gray-100">
+
+
+
+    <nav class="bg-white shadow sticky top-0 z-50">
+  <div class="max-w-[88rem] mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+
+      <!-- Logo -->
+      <div class="flex items-center space-x-4">
+        <img src="tree.png" alt="Logo" class="h-12 w-12 md:h-16 md:w-16 object-contain">
+        <a href="/" class="text-lg md:text-xl font-bold text-gray-800">Lif</a>
+      </div>
+
+      <!-- Desktop links -->
+      <div class="hidden md:flex items-center space-x-10">
+        <a href="#" class="nav-link font-bold">Home</a>
+        <a href="#" class="nav-link font-bold">About</a>
+        <a href="#" class="nav-link font-bold">Services</a>
+        <a href="#" class="nav-link font-bold">Contact</a>
+      </div>
+
+      <!-- Desktop auth buttons -->
+      <div class="hidden md:flex items-center space-x-4">
+        <button class="btn-primary">Login</button>
+        <button class="btn-primary">Sign Up</button>
+      </div>
+
+      <!-- Mobile menu button -->
+      <button
+        id="mobileMenuButton"
+        class="md:hidden inline-flex items-center justify-center rounded-md p-2 text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-orange-400"
+        aria-label="Open menu"
+      >
+        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobileMenuPanel" class="md:hidden hidden border-t border-gray-200">
+    <div class="px-4 py-3 space-y-3">
+      <div class="grid grid-cols-2 gap-3">
+        <button class="btn-primary w-full">Login</button>
+        <button class="btn-primary w-full">Sign Up</button>
+      </div>
+
+      <div class="grid grid-cols-1 gap-2 pt-2">
+        <a href="#" class="block px-3 py-2 rounded-md nav-link">Home</a>
+        <a href="#" class="block px-3 py-2 rounded-md nav-link">About</a>
+        <a href="#" class="block px-3 py-2 rounded-md nav-link">Services</a>
+        <a href="#" class="block px-3 py-2 rounded-md nav-link">Contact</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+
+<script>
+  const mobileBtn = document.getElementById('mobileMenuButton');
+  const mobilePanel = document.getElementById('mobileMenuPanel');
+  mobileBtn?.addEventListener('click', () => {
+    mobilePanel.classList.toggle('hidden');
+  });
+</script>
+
+
+
+
+<section class="pb-12 sm:pb-16 bg-gradient-to-r from-orange-300 to-orange-100 w-full">
+  <div class="max-w-[88rem] mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-6 gap-6 pt-8 md:pt-12">
+
+    <!-- Text -->
+    <div class="col-span-6 md:col-span-3 text-center md:text-left">
+      <h1 class="hero-heading text-balance">
+        Empowering <br class="hidden md:block">Patients
+      </h1>
+
+      <p class="body-text max-w-md mx-auto md:mx-0 mt-4 md:mt-8 font-medium">
+        Our mission is to develop digital therapies to help users take control of their problems and to develop essential skills, our stand-alone therapies allow users to perform therapies on their own with minimal physician supervision required.
+      </p>
+
+      <button class="btn-primary mt-6 md:mt-8">
+        Learn More
+      </button>
+    </div>
+
+    <!-- Image -->
+    <div class="col-span-6 md:col-span-3 flex justify-center md:justify-end items-center">
+      <img
+        src="streaks.png"
+        alt="Example"
+        class="hidden sm:block w-40 sm:w-52 md:w-60 h-auto md:mr-32 md:mt-4 object-contain"
+      >
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+
+<section class="h-auto w-full">
+  <h1 class="section-title pt-16 sm:pt-24">
+    What kind of Lif are you looking for?
+  </h1>
+
+  <div class="max-w-[88rem] mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-6 gap-6 p-4 mt-8 sm:mt-12">
+
+    <button class="pill-btn col-span-6 sm:col-span-3 md:col-span-2">
+      <span>Manage Anxiety</span>
+      <img src="Anxiety.png" alt="Anxiety" class="w-6 h-6 object-contain">
+    </button>
+
+    <button class="pill-btn col-span-6 sm:col-span-3 md:col-span-2">
+      <span>Process Thoughts</span>
+      <img src="Thinking.png" alt="Thinking" class="w-6 h-6 object-contain">
+    </button>
+
+    <button class="pill-btn col-span-6 sm:col-span-3 md:col-span-2">
+      <span>Manage Stress</span>
+      <img src="Stress.png" alt="Stress" class="w-6 h-6 object-contain">
+    </button>
+
+    <button class="pill-btn col-span-6 sm:col-span-3 md:col-span-2">
+      <span>Start Therapy</span>
+      <img src="Therapy.png" alt="Therapy" class="w-6 h-6 object-contain">
+    </button>
+
+    <button class="pill-btn col-span-6 sm:col-span-3 md:col-span-2">
+      <span>Sleep Soundly</span>
+      <img src="Sleep.png" alt="Sleep" class="w-6 h-6 object-contain">
+    </button>
+
+    <button class="pill-btn col-span-6 sm:col-span-3 md:col-span-2">
+      <span>Practice Meditation</span>
+      <img src="Meditation.png" alt="Meditation" class="w-6 h-6 object-contain">
+    </button>
+
+  </div>
+</section>
+
+
+
+
+
+
+
+<h1 class="text-center text-2xl sm:text-4xl md:text-[3rem] font-bold m-auto pb-12 md:pb-16 mt-32 md:mt-64">
+  The mental health app for<br class="hidden md:block"> every moment
+</h1>
+
+<section class="w-full bg-transparent overflow-clip">
+  <div class="max-w-[88rem] mx-auto px-4 sm:px-6 lg:px-8 relative h-auto flex items-center mt-12">
+
+    <div id="carouselTrack" class="flex w-full transition-transform duration-500 ease-in-out mb-10 md:mb-20">
+
+      <!-- Slide 1 -->
+      <div class="w-full shrink-0 flex justify-center items-center h-[34rem] md:h-[30rem] mt-8">
+        <div class="w-full h-full">
+          <div class="w-full h-full bg-orange-500 rounded-3xl flex flex-col md:flex-row justify-center items-center p-6 md:p-8 gap-8 md:gap-36">
+
+            <!-- Card stack -->
+            <div class="relative max-w-md p-6 md:p-8 h-auto flex justify-center items-center">
+              <div class="absolute inset-0 bg-orange-200 rounded-2xl shadow-lg p-6 flex flex-col justify-between">
+                <p class="font-bold text-lg sm:text-xl lg:text-2xl">
+                  Something I can't really tell.
+                </p>
+              </div>
+
+              <div class="relative bg-white rounded-2xl shadow-md p-6 sm:p-8 mt-12">
+                <p class="body-text text-xs sm:text-sm lg:text-xl leading-tight">
+                  This is some example text filling most of the card. It can be multiple lines and will wrap naturally inside the card.
+                </p>
+
+                <div class="flex justify-between items-center mt-8 sm:mt-4">
+                  <svg class="w-5 h-5 sm:w-6 sm:h-6 text-orange-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M12 1a3 3 0 00-3 3v7a3 3 0 006 0V4a3 3 0 00-3-3zM19 10a7 7 0 01-14 0m7 7v4m-4 0h8" />
+                  </svg>
+                  <svg class="w-5 h-5 sm:w-6 sm:h-6 text-orange-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M3 7l9-4 9 4-9 4-9-4zm0 6l9 4 9-4m-9 4v5" />
+                  </svg>
+                </div>
+              </div>
+
+              <img
+                src="tree.png"
+                alt="Logo"
+                class="h-32 sm:h-48 md:h-64 w-[10rem] sm:w-[14rem] md:w-[18rem] object-contain absolute -bottom-12 md:-bottom-28 left-1/2 -translate-x-1/2"
+              >
+            </div>
+
+            <!-- Text -->
+            <div class="max-w-md text-center md:text-left">
+              <h2 class="section-title text-left pb-4 md:pb-8">
+                Always there for <br class="hidden md:block"> support
+              </h2>
+              <p class="body-text font-semibold">
+                Unlock what's on your mind with our AI-chatbot, and get personalised recommendations and advice based on however you're feeling.
+              </p>
+              <button class="btn-primary bg-white text-black hover:bg-orange-600 mt-6">
+                Chat Something
+              </button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Remaining slides (visual placeholders) -->
+      <div class="w-full shrink-0 flex justify-center items-center h-[34rem] md:h-[30rem] mt-8">
+        <div class="w-full h-full px-3 sm:px-4 md:px-6">
+          <div class="card bg-orange-500 h-full"></div>
+        </div>
+      </div>
+
+      <div class="w-full shrink-0 flex justify-center items-center h-[34rem] md:h-[30rem] mt-8">
+        <div class="w-full h-full px-3 sm:px-4 md:px-6">
+          <div class="card bg-orange-500 h-full"></div>
+        </div>
+      </div>
+
+      <div class="w-full shrink-0 flex justify-center items-center h-[34rem] md:h-[30rem] mt-8">
+        <div class="w-full h-full px-3 sm:px-4 md:px-6">
+          <div class="card bg-orange-500 h-full"></div>
+        </div>
+      </div>
+
+      <div class="w-full shrink-0 flex justify-center items-center h-[34rem] md:h-[30rem] mt-8">
+        <div class="w-full h-full px-3 sm:px-4 md:px-6">
+          <div class="card bg-orange-500 h-full"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Carousel dots -->
+    <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2 first_carousel">
+      <button class="carousel-dot bg-black" data-index="0"></button>
+      <button class="carousel-dot bg-gray-400" data-index="1"></button>
+      <button class="carousel-dot bg-gray-400" data-index="2"></button>
+      <button class="carousel-dot bg-gray-400" data-index="3"></button>
+      <button class="carousel-dot bg-gray-400" data-index="4"></button>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="max-w-[88rem] mx-auto mt-16 md:mt-24">
+  <h1 class="text-center text-2xl sm:text-4xl md:text-[3rem] font-bold m-auto pb-10 md:pb-16 leading-snug md:leading-[1.4]">
+    Designed by Experts.<br class="hidden md:block"> Delivered with care.
+  </h1>
+
+  
+  <div class="grid grid-cols-6 gap-6 text-center">
+    
+    <div class="col-span-6 sm:col-span-3 md:col-span-2">
+      <h2 class="text-xl sm:text-2xl md:text-[2rem] font-bold">All the tools</h2>
+      <p class="text-base h-[84px] sm:text-xl m-4">
+        We'll help you identify what<br>works best for you
+      </p>
+      <img src="./settings 1.png" class="mx-auto w-72 sm:w-80 md:w-[28rem] h-auto" />
+    </div>
+
+    
+    <div class="col-span-6 sm:col-span-3 md:col-span-2">
+      <h2 class="text-xl sm:text-2xl md:text-[2rem] font-bold">Daily Exercises</h2>
+      <p class="text-base h-[84px] sm:text-xl m-4">
+        Of good mental health<br>practice
+      </p>
+      <img src="./calendar 1.png" class="mx-auto w-72 sm:w-80 md:w-[28rem] h-auto" />
+    </div>
+
+    
+    <div class="col-span-6 sm:col-span-3 md:col-span-2">
+      <h2 class="text-xl sm:text-2xl md:text-[2rem] font-bold">Customisable</h2>
+      <p class="text-base h-[84px] sm:text-xl m-4">
+        So that it makes you feel<br>at ease;
+      </p>
+      <img src="./streaks.png" class="mx-auto w-72 sm:w-80 md:w-[28rem] h-auto" />
+    </div>
+  </div>
+</section>
+
+
+<h1 class="text-center text-[3rem] font-bold pb-4 mt-64">
+  Over 2 million 5-star reviews.
+</h1>
+<section class="w-full overflow-clip mt-12">
+  <div class="max-w-[88rem] mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="relative w-full h-auto flex items-center">
+
+      <div
+        id="carouselTrack2"
+        class="flex w-full h-full -mx-3 transition-transform duration-500 ease-in-out mb-20"
+      >
+
+        <!-- Slide 1 -->
+        <div class="shrink-0 basis-full md:basis-1/3 min-h-[28rem] flex px-3">
+          <div class="card w-full bg-[#ECAC6D] flex flex-col">
+
+            <svg
+              class="w-[75px] h-[75px] mb-6"
+              viewBox="0 0 24 24"
+              fill="#ECAC6D"
+              stroke="#CF7E2C"
+            >
+              <path d="M21 12c0 4.418-4.03 8-9 8a9.77 9.77 0 01-4-.8L3 20l1.8-3.6A7.96 7.96 0 013 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+            </svg>
+
+            <p class="text-2xl font-bold mb-4 leading-snug">
+              When I cannot fall asleep, I turn on the app and I am out in 5 minutes.
+            </p>
+
+            <p class="body-text text-lg mb-6 font-light">
+              John L Sinnott
+            </p>
+
+            <div class="flex space-x-1">
+              <svg class="w-10 h-10 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967h4.175c.969 0 1.371 1.24.588 1.81l-3.38 2.457 1.287 3.967c.3.921-.755 1.688-1.54 1.118L10 13.347l-3.367 2.6c-.785.57-1.84-.197-1.54-1.118l1.287-3.967-3.38-2.457c-.783-.57-.38-1.81.588-1.81h4.175l1.286-3.967z"/></svg>
+              <svg class="w-10 h-10 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967h4.175c.969 0 1.371 1.24.588 1.81l-3.38 2.457 1.287 3.967c.3.921-.755 1.688-1.54 1.118L10 13.347l-3.367 2.6c-.785.57-1.84-.197-1.54-1.118l1.287-3.967-3.38-2.457c-.783-.57-.38-1.81.588-1.81h4.175l1.286-3.967z"/></svg>
+              <svg class="w-10 h-10 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967h4.175c.969 0 1.371 1.24.588 1.81l-3.38 2.457 1.287 3.967c.3.921-.755 1.688-1.54 1.118L10 13.347l-3.367 2.6c-.785.57-1.84-.197-1.54-1.118l1.287-3.967-3.38-2.457c-.783-.57-.38-1.81.588-1.81h4.175l1.286-3.967z"/></svg>
+              <svg class="w-10 h-10 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967h4.175c.969 0 1.371 1.24.588 1.81l-3.38 2.457 1.287 3.967c.3.921-.755 1.688-1.54 1.118L10 13.347l-3.367 2.6c-.785.57-1.84-.197-1.54-1.118l1.287-3.967-3.38-2.457c-.783-.57-.38-1.81.588-1.81h4.175l1.286-3.967z"/></svg>
+              <svg class="w-10 h-10 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967h4.175c.969 0 1.371 1.24.588 1.81l-3.38 2.457 1.287 3.967c.3.921-.755 1.688-1.54 1.118L10 13.347l-3.367 2.6c-.785.57-1.84-.197-1.54-1.118l1.287-3.967-3.38-2.457c-.783-.57-.38-1.81.588-1.81h4.175l1.286-3.967z"/></svg>
+            </div>
+
+          </div>
+        </div>
+
+<!-- Slide 2 -->
+<div class="shrink-0 basis-full md:basis-1/3 min-h-[28rem] flex px-3">
+  <div class="card w-full bg-[#ECAC6D] flex flex-col">
+
+    <svg class="w-[75px] h-[75px] mb-6" viewBox="0 0 24 24" fill="#ECAC6D" stroke="#CF7E2C">
+      <path d="M21 12c0 4.418-4.03 8-9 8a9.77 9.77 0 01-4-.8L3 20l1.8-3.6A7.96 7.96 0 013 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+    </svg>
+
+    <p class="text-2xl font-bold mb-4 leading-snug">
+      Lif has completely transformed my morning routine. I feel calmer and more focused every day.
+    </p>
+
+    <p class="body-text text-lg mb-6 font-light">
+      Stefan P Berrios
+    </p>
+
+    <div class="flex space-x-1">
+      <svg class="w-10 h-10 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967h4.175c.969 0 1.371 1.24.588 1.81l-3.38 2.457 1.287 3.967c.3.921-.755 1.688-1.54 1.118L10 13.347l-3.367 2.6c-.785.57-1.84-.197-1.54-1.118l1.287-3.967-3.38-2.457c-.783-.57-.38-1.81.588-1.81h4.175l1.286-3.967z"/></svg>
+      <svg class="w-10 h-10 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967h4.175c.969 0 1.371 1.24.588 1.81l-3.38 2.457 1.287 3.967c.3.921-.755 1.688-1.54 1.118L10 13.347l-3.367 2.6c-.785.57-1.84-.197-1.54-1.118l1.287-3.967-3.38-2.457c-.783-.57-.38-1.81.588-1.81h4.175l1.286-3.967z"/></svg>
+      <svg class="w-10 h-10 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967h4.175c.969 0 1.371 1.24.588 1.81l-3.38 2.457 1.287 3.967c.3.921-.755 1.688-1.54 1.118L10 13.347l-3.367 2.6c-.785.57-1.84-.197-1.54-1.118l1.287-3.967-3.38-2.457c-.783-.57-.38-1.81.588-1.81h4.175l1.286-3.967z"/></svg>
+      <svg class="w-10 h-10 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967h4.175c.969 0 1.371 1.24.588 1.81l-3.38 2.457 1.287 3.967c.3.921-.755 1.688-1.54 1.118L10 13.347l-3.367 2.6c-.785.57-1.84-.197-1.54-1.118l1.287-3.967-3.38-2.457c-.783-.57-.38-1.81.588-1.81h4.175l1.286-3.967z"/></svg>
+    </div>
+
+  </div>
+</div>
+
+<!-- Slide 3 -->
+<div class="shrink-0 basis-full md:basis-1/3 min-h-[28rem] flex px-3">
+  <div class="card w-full bg-[#ECAC6D] flex flex-col">
+
+    <svg class="w-[75px] h-[75px] mb-6" viewBox="0 0 24 24" fill="#ECAC6D" stroke="#CF7E2C">
+      <path d="M21 12c0 4.418-4.03 8-9 8a9.77 9.77 0 01-4-.8L3 20l1.8-3.6A7.96 7.96 0 013 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+    </svg>
+
+    <p class="text-2xl font-bold mb-4 leading-snug">
+      The guided exercises are amazing. I feel calmer and more present after each session.
+    </p>
+
+    <p class="body-text text-lg mb-6 font-light">
+      Liam H.
+    </p>
+
+    <div class="flex space-x-1">
+      <svg class="w-10 h-10 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967h4.175c.969 0 1.371 1.24.588 1.81l-3.38 2.457 1.287 3.967c.3.921-.755 1.688-1.54 1.118L10 13.347l-3.367 2.6c-.785.57-1.84-.197-1.54-1.118l1.287-3.967-3.38-2.457c-.783-.57-.38-1.81.588-1.81h4.175l1.286-3.967z"/></svg>
+      <svg class="w-10 h-10 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967h4.175c.969 0 1.371 1.24.588 1.81l-3.38 2.457 1.287 3.967c.3.921-.755 1.688-1.54 1.118L10 13.347l-3.367 2.6c-.785.57-1.84-.197-1.54-1.118l1.287-3.967-3.38-2.457c-.783-.57-.38-1.81.588-1.81h4.175l1.286-3.967z"/></svg>
+      <svg class="w-10 h-10 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967h4.175c.969 0 1.371 1.24.588 1.81l-3.38 2.457 1.287 3.967c.3.921-.755 1.688-1.54 1.118L10 13.347l-3.367 2.6c-.785.57-1.84-.197-1.54-1.118l1.287-3.967-3.38-2.457c-.783-.57-.38-1.81.588-1.81h4.175l1.286-3.967z"/></svg>
+      <svg class="w-10 h-10 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967h4.175c.969 0 1.371 1.24.588 1.81l-3.38 2.457 1.287 3.967c.3.921-.755 1.688-1.54 1.118L10 13.347l-3.367 2.6c-.785.57-1.84-.197-1.54-1.118l1.287-3.967-3.38-2.457c-.783-.57-.38-1.81.588-1.81h4.175l1.286-3.967z"/></svg>
+      <svg class="w-10 h-10 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967h4.175c.969 0 1.371 1.24.588 1.81l-3.38 2.457 1.287 3.967c.3.921-.755 1.688-1.54 1.118L10 13.347l-3.367 2.6c-.785.57-1.84-.197-1.54-1.118l1.287-3.967-3.38-2.457c-.783-.57-.38-1.81.588-1.81h4.175l1.286-3.967z"/></svg>
+    </div>
+
+  </div>
+</div>
+
+<!-- Slide 4 -->
+<div class="shrink-0 basis-full md:basis-1/3 min-h-[28rem] flex px-3">
+  <div class="card w-full bg-[#ECAC6D] flex flex-col">
+
+    <svg class="w-[75px] h-[75px] mb-6" viewBox="0 0 24 24" fill="#ECAC6D" stroke="#CF7E2C">
+      <path d="M21 12c0 4.418-4.03 8-9 8a9.77 9.77 0 01-4-.8L3 20l1.8-3.6A7.96 7.96 0 013 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+    </svg>
+
+    <p class="text-2xl font-bold mb-4 leading-snug">
+      I love the sleep stories feature. It helps me wind down after a stressful day.
+    </p>
+
+    <p class="body-text text-lg mb-6 font-light">
+      Sarah P.
+    </p>
+
+    <div class="flex space-x-1">
+      <svg class="w-10 h-10 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967h4.175c.969 0 1.371 1.24.588 1.81l-3.38 2.457 1.287 3.967c.3.921-.755 1.688-1.54 1.118L10 13.347l-3.367 2.6c-.785.57-1.84-.197-1.54-1.118l1.287-3.967-3.38-2.457c-.783-.57-.38-1.81.588-1.81h4.175l1.286-3.967z"/></svg>
+      <svg class="w-10 h-10 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967h4.175c.969 0 1.371 1.24.588 1.81l-3.38 2.457 1.287 3.967c.3.921-.755 1.688-1.54 1.118L10 13.347l-3.367 2.6c-.785.57-1.84-.197-1.54-1.118l1.287-3.967-3.38-2.457c-.783-.57-.38-1.81.588-1.81h4.175l1.286-3.967z"/></svg>
+      <svg class="w-10 h-10 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967h4.175c.969 0 1.371 1.24.588 1.81l-3.38 2.457 1.287 3.967c.3.921-.755 1.688-1.54 1.118L10 13.347l-3.367 2.6c-.785.57-1.84-.197-1.54-1.118l1.287-3.967-3.38-2.457c-.783-.57-.38-1.81.588-1.81h4.175l1.286-3.967z"/></svg>
+      <svg class="w-10 h-10 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967h4.175c.969 0 1.371 1.24.588 1.81l-3.38 2.457 1.287 3.967c.3.921-.755 1.688-1.54 1.118L10 13.347l-3.367 2.6c-.785.57-1.84-.197-1.54-1.118l1.287-3.967-3.38-2.457c-.783-.57-.38-1.81.588-1.81h4.175l1.286-3.967z"/></svg>
+
+    </div>
+
+  </div>
+</div>
+
+<!-- Slide 5 -->
+<div class="shrink-0 basis-full md:basis-1/3 min-h-[28rem] flex px-3">
+  <div class="card w-full bg-[#ECAC6D] flex flex-col p-8">
+    <svg class="w-[75px] h-[75px] mb-6" viewBox="0 0 24 24" fill="#ECAC6D" stroke="#CF7E2C">
+      <path d="M21 12c0 4.418-4.03 8-9 8a9.77 9.77 0 01-4-.8L3 20l1.8-3.6A7.96 7.96 0 013 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+    </svg>
+    <p class="text-2xl font-bold mb-4 leading-snug">
+      I’ve never felt calmer using any other app; Lif is really really amazing!
+    </p>
+    <p class="body-text text-lg mb-6 font-light">Carlos P.</p>
+    <div class="flex space-x-1">
+      <svg class="w-10 h-10 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967h4.175c.969 0 1.371 1.24.588 1.81l-3.38 2.457 1.287 3.967c.3.921-.755 1.688-1.54 1.118L10 13.347l-3.367 2.6c-.785.57-1.84-.197-1.54-1.118l1.287-3.967-3.38-2.457c-.783-.57-.38-1.81.588-1.81h4.175l1.286-3.967z"/></svg>
+      <svg class="w-10 h-10 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967h4.175c.969 0 1.371 1.24.588 1.81l-3.38 2.457 1.287 3.967c.3.921-.755 1.688-1.54 1.118L10 13.347l-3.367 2.6c-.785.57-1.84-.197-1.54-1.118l1.287-3.967-3.38-2.457c-.783-.57-.38-1.81.588-1.81h4.175l1.286-3.967z"/></svg>
+      <svg class="w-10 h-10 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967h4.175c.969 0 1.371 1.24.588 1.81l-3.38 2.457 1.287 3.967c.3.921-.755 1.688-1.54 1.118L10 13.347l-3.367 2.6c-.785.57-1.84-.197-1.54-1.118l1.287-3.967-3.38-2.457c-.783-.57-.38-1.81.588-1.81h4.175l1.286-3.967z"/></svg>
+    </div>
+  </div>
+</div>
+
+      </div>
+
+      <!-- Carousel dots -->
+      <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2 second_carousel">
+        <button class="carousel-dot bg-gray-400 w-6 h-6" data-index="0"></button>
+        <button class="carousel-dot bg-gray-400 w-6 h-6" data-index="1"></button>
+        <button class="carousel-dot bg-gray-400 w-6 h-6" data-index="2"></button>
+        <button class="carousel-dot bg-gray-400 w-6 h-6" data-index="3"></button>
+        <button class="carousel-dot bg-gray-400 w-6 h-6" data-index="4"></button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+<section class="w-full mt-40">
+  <div class="max-w-[88rem] mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="bg-orange-100 rounded-2xl p-8 sm:p-12">
+
+      <img src="./tree.png" alt="Logo" class="h-32 sm:h-40 md:h-72 mx-auto mb-6">
+      
+      <h1 class="text-3xl sm:text-5xl md:text-7xl font-bold text-center leading-tight">
+        Join the millions who<br class="hidden sm:block"> use Lif everyday
+      </h1>
+      
+      <div class="grid grid-cols-1 sm:grid-cols-3 text-center gap-8 mt-12">
+        
+        
+<div class="mx-auto">
+  <div class="flex justify-center space-x-1">
+    <svg class="w-8 h-8 sm:w-10 sm:h-10 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967h4.175c.969 0 1.371 1.24.588 1.81l-3.38 2.457 1.287 3.967c.3.921-.755 1.688-1.54 1.118L10 13.347l-3.367 2.6c-.785.57-1.84-.197-1.54-1.118l1.287-3.967-3.38-2.457c-.783-.57-.38-1.81.588-1.81h4.175l1.286-3.967z" />
+    </svg>
+    <svg class="w-8 h-8 sm:w-10 sm:h-10 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967h4.175c.969 0 1.371 1.24.588 1.81l-3.38 2.457 1.287 3.967c.3.921-.755 1.688-1.54 1.118L10 13.347l-3.367 2.6c-.785.57-1.84-.197-1.54-1.118l1.287-3.967-3.38-2.457c-.783-.57-.38-1.81.588-1.81h4.175l1.286-3.967z" />
+    </svg>
+    <svg class="w-8 h-8 sm:w-10 sm:h-10 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967h4.175c.969 0 1.371 1.24.588 1.81l-3.38 2.457 1.287 3.967c.3.921-.755 1.688-1.54 1.118L10 13.347l-3.367 2.6c-.785.57-1.84-.197-1.54-1.118l1.287-3.967-3.38-2.457c-.783-.57-.38-1.81.588-1.81h4.175l1.286-3.967z" />
+    </svg>
+    <svg class="w-8 h-8 sm:w-10 sm:h-10 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967h4.175c.969 0 1.371 1.24.588 1.81l-3.38 2.457 1.287 3.967c.3.921-.755 1.688-1.54 1.118L10 13.347l-3.367 2.6c-.785.57-1.84-.197-1.54-1.118l1.287-3.967-3.38-2.457c-.783-.57-.38-1.81.588-1.81h4.175l1.286-3.967z" />
+    </svg>
+    <svg class="w-8 h-8 sm:w-10 sm:h-10 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967h4.175c.969 0 1.371 1.24.588 1.81l-3.38 2.457 1.287 3.967c.3.921-.755 1.688-1.54 1.118L10 13.347l-3.367 2.6c-.785.57-1.84-.197-1.54-1.118l1.287-3.967-3.38-2.457c-.783-.57-.38-1.81.588-1.81h4.175l1.286-3.967z" />
+    </svg>
+  </div>
+  <p class="font-bold text-center pt-2">App Store Rating</p>
+</div>
+
+        
+        
+        <div>
+          <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold">105M+</h1>
+          <p class="pt-2">Downloads</p>
+        </div>
+        
+        
+        <div>
+          <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold">450M+</h1>
+          <p class="pt-2">Minutes Meditated</p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+<h1 class="text-center text-[2rem] font-bold pb-4 mt-48">
+  Frequently Asked Questions
+</h1>
+
+<section class="w-full">
+  <div class="max-w-[88rem] mx-auto px-4 sm:px-6 lg:px-8 pt-12 space-y-4">
+
+    <details class="group w-full">
+      <summary class="list-none cursor-pointer select-none">
+        <div class="w-full px-4 py-4 border-b-2 border-black flex items-center justify-between">
+          <span class="text-gray-900 font-medium">What is Lif?</span>
+          <span class="text-gray-900 transition-transform duration-300">
+            <span class="group-open:hidden">+</span>
+            <span class="hidden group-open:inline">−</span>
+          </span>
+        </div>
+      </summary>
+      <div class="px-4 text-gray-700 overflow-hidden transition-all duration-500 max-h-0 group-open:max-h-96">
+        <p class="py-4">
+          Lif is a mental health app that provides digital therapies, exercises, and personalized guidance to help you manage stress, anxiety, and other challenges.
+        </p>
+      </div>
+    </details>
+
+    <details class="group w-full">
+      <summary class="list-none cursor-pointer select-none">
+        <div class="w-full px-4 py-4 border-b-2 border-black flex items-center justify-between">
+          <span class="text-gray-900 font-medium">How does Lif work?</span>
+          <span class="text-gray-900 transition-transform duration-300">
+            <span class="group-open:hidden">+</span>
+            <span class="hidden group-open:inline">−</span>
+          </span>
+        </div>
+      </summary>
+      <div class="px-4 text-gray-700 overflow-hidden transition-all duration-500 max-h-0 group-open:max-h-96">
+        <p class="py-4">
+          Lif uses interactive exercises, guided meditations, and AI-driven chat support to help you identify emotions, reduce stress, and improve mental wellbeing at your own pace.
+        </p>
+      </div>
+    </details>
+
+    <details class="group w-full">
+      <summary class="list-none cursor-pointer select-none">
+        <div class="w-full px-4 py-4 border-b-2 border-black flex items-center justify-between">
+          <span class="text-gray-900 font-medium">Is my data safe?</span>
+          <span class="text-gray-900 transition-transform duration-300">
+            <span class="group-open:hidden">+</span>
+            <span class="hidden group-open:inline">−</span>
+          </span>
+        </div>
+      </summary>
+      <div class="px-4 text-gray-700 overflow-hidden transition-all duration-500 max-h-0 group-open:max-h-96">
+        <p class="py-4">
+          Yes, Lif uses end-to-end encryption and adheres to strict privacy policies to ensure your personal information and chat data remain secure.
+        </p>
+      </div>
+    </details>
+
+    <details class="group w-full">
+      <summary class="list-none cursor-pointer select-none">
+        <div class="w-full px-4 py-4 border-b-2 border-black flex items-center justify-between">
+          <span class="text-gray-900 font-medium">Do I need a therapist?</span>
+          <span class="text-gray-900 transition-transform duration-300">
+            <span class="group-open:hidden">+</span>
+            <span class="hidden group-open:inline">−</span>
+          </span>
+        </div>
+      </summary>
+      <div class="px-4 text-gray-700 overflow-hidden transition-all duration-500 max-h-0 group-open:max-h-96">
+        <p class="py-4">
+          Lif is designed for self-guided support, but it can complement professional therapy. You can use Lif on your own, and consult a therapist if you need additional guidance.
+        </p>
+      </div>
+    </details>
+
+    <details class="group w-full">
+      <summary class="list-none cursor-pointer select-none">
+        <div class="w-full px-4 py-4 border-b-2 border-black flex items-center justify-between">
+          <span class="text-gray-900 font-medium">Can I use Lif for free?</span>
+          <span class="text-gray-900 transition-transform duration-300">
+            <span class="group-open:hidden">+</span>
+            <span class="hidden group-open:inline">−</span>
+          </span>
+        </div>
+      </summary>
+      <div class="px-4 text-gray-700 overflow-hidden transition-all duration-500 max-h-0 group-open:max-h-96">
+        <p class="py-4">
+          Yes, Lif offers a free version with access to core exercises and AI chat. Premium features like advanced programs and personalized plans are available via subscription.
+        </p>
+      </div>
+    </details>
+
+    <details class="group w-full">
+      <summary class="list-none cursor-pointer select-none">
+        <div class="w-full px-4 py-4 border-b-2 border-black flex items-center justify-between">
+          <span class="text-gray-900 font-medium">Which devices support Lif?</span>
+          <span class="text-gray-900 transition-transform duration-300">
+            <span class="group-open:hidden">+</span>
+            <span class="hidden group-open:inline">−</span>
+          </span>
+        </div>
+      </summary>
+      <div class="px-4 text-gray-700 overflow-hidden transition-all duration-500 max-h-0 group-open:max-h-96">
+        <p class="py-4">
+          Lif is available on iOS, Android, and web browsers, so you can access it anywhere.
+        </p>
+      </div>
+    </details>
+
+        <details class="group w-full">
+      <summary class="list-none cursor-pointer select-none">
+        <div class="w-full px-4 py-4 border-b-2 border-black flex items-center justify-between">
+          <span class="text-gray-900 font-medium">How often should I use Lif?</span>
+          <span class="text-gray-900 transition-transform duration-300">
+            <span class="group-open:hidden">+</span>
+            <span class="hidden group-open:inline">−</span>
+          </span>
+        </div>
+      </summary>
+      <div class="px-4 text-gray-700 overflow-hidden transition-all duration-500 max-h-0 group-open:max-h-96">
+        <p class="py-4">
+          We recommend using Lif daily for best results, even if it's just 5–10 minutes for a quick exercise or check-in.
+        </p>
+      </div>
+    </details>
+
+        <details class="group w-full">
+      <summary class="list-none cursor-pointer select-none">
+        <div class="w-full px-4 py-4 border-b-2 border-black flex items-center justify-between">
+          <span class="text-gray-900 font-medium">Can I track my progress?</span>
+          <span class="text-gray-900 transition-transform duration-300">
+            <span class="group-open:hidden">+</span>
+            <span class="hidden group-open:inline">−</span>
+          </span>
+        </div>
+      </summary>
+      <div class="px-4 text-gray-700 overflow-hidden transition-all duration-500 max-h-0 group-open:max-h-96">
+        <p class="py-4">
+          Yes, Lif tracks your completed exercises, meditation minutes, and progress over time to help you stay motivated.
+        </p>
+      </div>
+    </details>
+
+  </div>
+</section>
+
+      
+
+
+
+
+<footer class="bg-gray-50 py-16 mt-32">
+  <div class="max-w-[88rem] mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="border-t-4 border-gray-300 mb-12"></div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12">
+
+      <!-- Resources -->
+      <div>
+        <h3 class="text-lg font-bold mb-4">Resources</h3>
+        <ul class="space-y-2 text-sm font-light">
+          <li><a href="#">Meditation App</a></li>
+          <li><a href="#">Sleep App</a></li>
+          <li><a href="#">Mindfulness Guides</a></li>
+          <li><a href="#">Mental Health Articles</a></li>
+          <li><a href="#">Exercise Programs</a></li>
+          <li><a href="#">Browse All Content</a></li>
+        </ul>
+      </div>
+
+      <!-- Company -->
+      <div>
+        <h3 class="text-lg font-bold mb-4">Company</h3>
+        <ul class="space-y-2 text-sm font-light">
+          <li><a href="#">About Lif</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Press</a></li>
+          <li><a href="#">Leadership</a></li>
+          <li><a href="#">Sitemap</a></li>
+        </ul>
+      </div>
+
+      <!-- Support -->
+      <div>
+        <h3 class="text-lg font-bold mb-4">Support</h3>
+        <ul class="space-y-2 text-sm font-light">
+          <li><a href="#">Help Center</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">Accessibility</a></li>
+          <li><a href="#">Privacy & Security</a></li>
+          <li><a href="#">Cookie Policy</a></li>
+        </ul>
+      </div>
+
+      <!-- My Lif & App -->
+      <div class="space-y-6">
+        <div>
+          <h3 class="text-lg font-bold mb-4">My Lif</h3>
+          <button class="btn-primary">
+            Login
+          </button>
+        </div>
+        <div>
+          <h3 class="text-lg font-bold mb-4">Get the app</h3>
+          <div class="flex flex-col space-y-2">
+            <button class="px-4 py-2 bg-black text-white text-sm font-semibold rounded hover:bg-gray-800 transition">
+              Download on the App Store
+            </button>
+            <button class="px-4 py-2 bg-green-600 text-white text-sm font-semibold rounded hover:bg-green-700 transition">
+              Get it on Google Play
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <p class="text-center text-sm text-gray-500 mt-12">
+      &copy; 2025 Lif. All rights reserved.
+    </p>
+
+  </div>
+</footer>
+
+
+
+      
+      <script>
+         const track = document.getElementById('carouselTrack');
+         const dots = Array.from(document.querySelectorAll('.first_carousel [data-index]'));
+         let current = 0;
+         
+         function goTo(index) {
+           current = index;
+           track.style.transform = `translateX(-${index * 100}%)`;
+           dots.forEach((d, i) => d.className = `w-3 h-3 rounded-full ${i === index ? 'bg-black' : 'bg-gray-400'}`);
+		 console.log("I was clicked");
+         }
+         
+         dots.forEach(dot => {
+           dot.addEventListener('click', () => goTo(Number(dot.dataset.index)));
+         });
+         
+         goTo(0);
+      </script>
+      <script>
+         const track2 = document.getElementById('carouselTrack2');
+         const dots2 = Array.from(document.querySelectorAll('.second_carousel [data-index]'));
+         let current2 = 0;
+         
+function goTo2(index) {
+  const slideWidth = track2.children[0].offsetWidth; 
+  track2.style.transform = `translateX(-${index * slideWidth}px)`;
+
+  dots2.forEach((d, i) => {
+    d.className = `w-3 h-3 rounded-full ${i === index ? 'bg-black' : 'bg-gray-400'}`;
+  });
+}
+
+         
+         dots2.forEach(dot => {
+           dot.addEventListener('click', () => goTo2(Number(dot.dataset.index)));
+         });
+         
+         goTo2(0);
+      </script>
+   </body>
+</html>
+

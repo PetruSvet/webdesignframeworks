@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+/* Urbanist font */
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Global font */
+@layer base {
+  html, body {
+    font-family: 'Urbanist', sans-serif;
+  }
+}
+
+@theme {
+  /* Brand colours */
+  --color-orange-main: #FF6A00;
+  --color-orange-soft: #ECAC6D;
+  --color-orange-light: #FFE6D1;
+
+  /* Neutrals */
+  --color-gray-text: #1f2937; /* gray-800 */
+  --color-gray-muted: #6b7280; /* gray-500 */
+
+  /* Radii */
+  --radius-pill: 9999px;
+  --radius-card: 1.5rem;
+
+  /* Spacing scale (used everywhere) */
+  --space-section-y: clamp(4rem, 8vw, 8rem);
+  --space-card: 2rem;
+
+  /* Type scale */
+  --text-hero: clamp(2.5rem, 5vw, 5rem);
+  --text-section-title: clamp(2rem, 4vw, 3rem);
+  --text-body: 1rem;
+}
+
+@layer components {
+  /* Primary buttons (used nav + hero) */
+  .btn-primary {
+    @apply px-6 py-3 rounded-full bg-orange-main text-white font-bold transition hover:opacity-90;
+  }
+
+  /* Pills / option buttons */
+  .pill-btn {
+    @apply flex items-center justify-between border border-black bg-white rounded-full px-6 py-4 font-bold;
+  }
+
+  /* Section headings */
+  .section-title {
+    @apply text-center font-bold leading-snug;
+    font-size: var(--text-section-title);
+  }
+
+  /* Hero heading */
+  .hero-heading {
+    @apply font-bold leading-snug;
+    font-size: var(--text-hero);
+  }
+
+  /* Paragraph text */
+  .body-text {
+    @apply text-gray-text leading-relaxed;
+    font-size: var(--text-body);
+  }
+
+  /* Cards */
+  .card {
+    @apply rounded-3xl p-8;
+    border-radius: var(--radius-card);
+  }
+
+  /* FAQ rows */
+  .faq-row {
+    @apply w-full px-4 py-4 border-b-2 border-black flex items-center justify-between cursor-pointer;
+  }
+}
